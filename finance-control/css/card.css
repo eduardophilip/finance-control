@@ -1,0 +1,100 @@
+.card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+   
+}
+
+.card__total {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+
+}
+
+.card__name--total {
+    color: var(--total-title);
+}
+
+.card__value--total {
+    color: var(--total-title);
+    font-weight: 700;   
+}
+
+.card__chart--total {
+
+}
+
+.card--income {
+    background-color: var(--income-card);
+}
+.card--expense {
+    background-color: var(--expense-card);
+}
+.card--savings {
+    background-color: var(--savings__card);
+}
+
+.card__item {
+    color: var(--white);
+}
+
+.card__header {
+
+}
+
+.card__icon {
+
+}
+
+.card__name {
+
+}
+
+.card__value {
+
+}
+
+.card-template {
+    
+}
+
+.card-template__item {
+    
+}
+
+.card-template__title {
+    color: var(--card-template--title);
+}
+
+.card-template__name {
+
+}
+
+.card-chart {
+    grid-column-start: 2;
+    grid-column-end: 5;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.card-chart__item {
+
+}
+
+.chart--inc__exp {
+
+}
+
+.chart--savings {
+
+}
+
+
+
+
+ 
+
+
+

@@ -1,0 +1,42 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-background);
+}
+
+.header__btn {
+    border: none;
+    background-color: var(--header-background);
+}
+
+.header__logo {
+    display: flex;
+}
+
+.header__image {
+
+}
+
+.header__name {
+    color: var(--main-title);
+}
+
+.header__user {
+
+}
+
+.folder-open {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.folder-open__icon {
+
+}
+
+.folder-open__name {
+
+}
+

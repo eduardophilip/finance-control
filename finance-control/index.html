@@ -16,15 +16,105 @@
   <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/card.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
-
   <!-- Add your site or application content here -->
+
+  <div class="main">
+
+    <section class="header">
+      <button class="header__btn">
+        <img src="img/Hamburger-menu.svg" alt="menu-buttom">
+      </button>
+      <div class="header__logo">
+        <img class="header__image" src="img/logo.svg" alt="logo">
+        <p class="header__name">finance.control</p>
+      </div>
+      <div class="header__user">
+        <img src="img/user-icon.svg" alt="user-icon">
+      </div>
+    </section>
+    
+    <section class="folder-open">
+      <img class="folder-open__icon" src="img/folder-open.svg" alt="icon-folder">
+      <p class="folder-open__name">2021</p>
+      <!-- <p class="folder__name">/May</p> for second page -->
+    </section>
+
+    <section class="card">
+
+      <div class="card__total">
+        <h3 class="card__header">
+          <span class="card__name--total">Total</span>
+          <img class="card__icon" src="img/dolar-icon.svg" alt="income icon">
+        </h3>
+        <div class="card__chart--total">
+          <!-- Update with the library chart.js -->
+          <img src="img/chart-temporario.svg" alt="">
+        </div>
+        <p class="card__value--total">€ 100,15</p>
+      </div>
+
+      <div class="card__item card--income">
+        <h3 class="card__header">
+          <img class="card__icon" src="img/income-icon.svg" alt="income icon">
+          <span class="card__name">Income</span>
+        </h3>
+        <p class="card__value">€ 9.291,23</p>
+      </div>
+
+      <div class="card__item card--expense">
+        <h3 class="card__header">
+          <img class="card__icon" src="img/expense-icon.svg" alt="income icon">
+          <span class="card__name">Expense</span>
+        </h3>
+        <p class="card__value">€ 8.000,00</p>
+      </div>
+
+      <div class="card__item card--savings">
+        <h3 class="card__header">
+          <img class="card__icon" src="img/savings-icon.svg" alt="income icon">
+          <span class="card__name">savings</span>
+        </h3>
+        <p class="card__value">€ 1.000,00</p>
+      </div>
+
+      <div class="card-template">
+        <h3 class="card-template__title">Define your monthly transaction templates</h3>
+
+        <ul class="card-tempate__item">
+          <h1 class="card-template__title">income</h1>
+          <li class="card-template__name">1</li>
+        </ul>
+
+        <ul class="card-tempate__item">
+          <h2 class="card-template__title">Expense</h2>
+          <li class="card-template__name">1</li>
+          <li>2</li>
+          <li>3</li>
+        </ul>
+
+      </div>
+
+      <div class="card-chart">
+        <div class="card-chart__item chart--inc__exp">chart income espense</div>
+        <div class="card-chart__item chart--savings">chart savings</div>
+      </div>
+
+    </section>
+
+  </div>
   
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>

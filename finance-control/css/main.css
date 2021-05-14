@@ -86,16 +86,38 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
   :root {
-    --main-background: #6FAFDD;
+    --header-background: #33B86C;
+    --main-background: #F5F5F5;
+    --side-bar-background: rgba(64, 64, 64, 98%);
+    --modal-background: rgba(64, 64, 64, 0.75);
     --white: #ffffff;
     --black: #000000;
-    --main-title: #20430F;
-    --income: #0BAB38;
-    --expense: #FF0000;
-    --total: #44836C;
-    --saving: #00c2ff;
+    --main-title: #20430F; 
+    --income-card: rgba(11, 173, 57, 0.9);
+    --expense-card: rgba(255, 0, 0, 0.70);
+    --total-title: #44836C;
+    --card-template--title: #8A8A8A;
+    --savings__card: rgba(0, 195, 255, 0.50);
+
+    --savings-chart: #00c3ff;
+    --expense-chart: #ff0000;
+    --income-chart: #0bad39;
+
+    --box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    --border-radius: 10px;
+  }
+
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 10vh 5vh 100vh;
+    min-height: 100vh;
+    background-color: var(--main-background);
   }
 
 
