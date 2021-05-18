@@ -1,8 +1,12 @@
 .header {
+    
+    background-color: var(--header-background);
+}
+
+.header__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--header-background);
 }
 
 .header__btn {
