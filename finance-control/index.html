@@ -32,17 +32,21 @@
   <!-- Add your site or application content here -->
 
   <div class="main">
-
+    
     <section class="header">
-      <button class="header__btn">
-        <img src="img/Hamburger-menu.svg" alt="menu-buttom">
-      </button>
-      <div class="header__logo">
-        <img src="img/logo-title.svg" alt="logo">
+
+      <div class="container header__container">
+        <button class="header__btn">
+          <img src="img/Hamburger-menu.svg" alt="menu-buttom">
+        </button>
+        <div class="header__logo">
+          <img src="img/logo-title.svg" alt="logo">
+        </div>
+        <div class="header__user">
+          <img src="img/user-icon.svg" alt="user-icon">
+        </div>
       </div>
-      <div class="header__user">
-        <img src="img/user-icon.svg" alt="user-icon">
-      </div>
+
     </section>
     
     <section class="folder-open">
@@ -51,64 +55,70 @@
       <!-- <p class="folder__name">/May</p> for second page -->
     </section>
 
-    <section class="card">
+    <section class="cards">
 
-      <div class="card__total">
-        <h3 class="card__header">
-          <span class="card__name--total">Total</span>
-          <img class="card__icon" src="img/dolar-icon.svg" alt="income icon">
-        </h3>
-        <div class="card__chart--total">
-          <!-- Update with the library chart.js -->
-          <img src="img/chart-temporario.svg" alt="">
+      <div class="container card__container">
+
+        <div class="card__total">
+          <h3 class="card__header">
+            <span class="card__name--total">Total</span>
+            <img class="card__icon" src="img/dolar-icon.svg" alt="income icon">
+          </h3>
+          <div class="card__chart--total">
+            <!-- Update with the library chart.js -->
+            <img src="img/chart-temporario.svg" alt="">
+          </div>
+          <p class="card__value--total">€ 100,15</p>
         </div>
-        <p class="card__value--total">€ 100,15</p>
-      </div>
 
-      <div class="card__item card--income">
-        <h3 class="card__header">
-          <img class="card__icon" src="img/income-icon.svg" alt="income icon">
-          <span class="card__name">Income</span>
-        </h3>
-        <p class="card__value">€ 9.291,23</p>
-      </div>
+        <div class="card__item card--income">
+          <h3 class="card__header">
+            <img class="card__icon" src="img/income-icon.svg" alt="income icon">
+            <span class="card__name">Income</span>
+          </h3>
+          <p class="card__value">€ 9.291,23</p>
+        </div>
 
-      <div class="card__item card--expense">
-        <h3 class="card__header">
-          <img class="card__icon" src="img/expense-icon.svg" alt="income icon">
-          <span class="card__name">Expense</span>
-        </h3>
-        <p class="card__value">€ 8.000,00</p>
-      </div>
+        <div class="card__item card--expense">
+          <h3 class="card__header">
+            <img class="card__icon" src="img/expense-icon.svg" alt="income icon">
+            <span class="card__name">Expense</span>
+          </h3>
+          <p class="card__value">€ 8.000,00</p>
+        </div>
 
-      <div class="card__item card--savings">
-        <h3 class="card__header">
-          <img class="card__icon" src="img/savings-icon.svg" alt="income icon">
-          <span class="card__name">savings</span>
-        </h3>
-        <p class="card__value">€ 1.000,00</p>
-      </div>
+        <div class="card__item card--savings">
+          <h3 class="card__header">
+            <img class="card__icon" src="img/savings-icon.svg" alt="income icon">
+            <span class="card__name">savings</span>
+          </h3>
+          <p class="card__value">€ 1.000,00</p>
+        </div>
 
-      <div class="card-template">
-        <h3 class="card-template__title">Define your monthly transaction templates</h3>
+        <div class="card-chart">
+          <div class="card-chart__item chart--inc__exp">chart income expense</div>
+          <div class="card-chart__item chart--savings">chart savings</div>
+        </div>
 
-        <ul class="card-tempate__item">
-          <h1 class="card-template__title">income</h1>
-          <li class="card-template__name">1</li>
-        </ul>
+        <div class="card-template">
+          
+          <h3 class="card-template__title">Define your monthly transaction templates</h3>
+          <nav class="card-template__nav">
+            <ul class="card-tempate__list">
+              <h1 class="card-template__title">income</h1>
+              <li class="card-template__item">1</li>
+            </ul>
 
-        <ul class="card-tempate__item">
-          <h2 class="card-template__title">Expense</h2>
-          <li class="card-template__name">1</li>
-          <li>2</li>
-          <li>3</li>
-        </ul>
+            <ul class="card-tempate__item">
+              <h2 class="card-template__title">Expense</h2>
+              <li class="card-template__name">1</li>
+              <li>2</li>
+              <li>3</li>
+            </ul>
+          </nav>
 
-      </div>
+        </div>
 
-      <div class="card-chart">
-        <div class="card-chart__item chart--inc__exp">chart income espense</div>
-        <div class="card-chart__item chart--savings">chart savings</div>
       </div>
 
     </section>
