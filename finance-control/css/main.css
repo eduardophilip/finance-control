@@ -120,6 +120,11 @@ textarea {
     background-color: var(--main-background);
   }
 
+  .container {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+
 
 
 /* ==========================================================================
