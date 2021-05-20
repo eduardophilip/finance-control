@@ -1,28 +1,51 @@
-.card {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 10px;
+.cards {
+  
    
 }
 
-.card__total {
-    background-color: var(--white);
+.card__item {
+    color: var(--white);
     border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
 
+.card--total {
+    background-color: var(--white);
+    grid-row-start: 1;
+    grid-row-end: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .card__name--total {
     color: var(--total-title);
+    font-weight: 700;
+}
+
+.card__icon--total {
+    margin-left: 10px;
+}
+
+.card__value {
+    padding-top: 1rem;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
 }
 
 .card__value--total {
     color: var(--total-title);
     font-weight: 700;   
+    font-size: 2rem;
+    padding: 0;
 }
 
 .card__chart--total {
-
+    
 }
 
 .card--income {
@@ -35,46 +58,97 @@
     background-color: var(--savings__card);
 }
 
-.card__item {
-    color: var(--white);
-}
-
 .card__header {
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    height: 60px;
 }
 
-.card__icon {
-
+.card__icon:not(.card__icon--total) {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
 }
 
 .card__name {
 
 }
 
-.card__value {
+/* ===== CARD TEMPLATES ===== */
+
+.card-template {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 3;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+.card-template__headline {
+    color: var(--card-template--title);
+}
+
+.card-template__nav {
 
 }
 
-.card-template {
-    
+.card-template__income {
+    background-color: var(--income-card);
+    box-shadow: var(--box-shadow);
+    border-radius: 10px 10px 0 0;
+}
+
+.card-template__expense {
+    background-color: var(--expense-card);
+    box-shadow: var(--box-shadow);
+    border-radius: 0 0 10px 10px;
+}
+
+.card-template__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-template__chevron {
+
+}
+
+.card-template__title--name {
+ 
+}
+
+.card-template__btn-add {
+
+}
+
+.card-template__list {
+
 }
 
 .card-template__item {
     
 }
 
-.card-template__title {
-    color: var(--card-template--title);
-}
-
 .card-template__name {
+    color: var(--white);
+}
+
+.card-template__btn-minus {
 
 }
+
+/*  ===== Cards CHARTS ===== */
 
 .card-chart {
     grid-column-start: 2;
     grid-column-end: 5;
-
+    grid-row-start: 2;
+    grid-row-end: 4;
+    background-color: var(--white);
     display: flex;
     flex-direction: column;
 }
@@ -89,6 +163,18 @@
 
 .chart--savings {
 
+}
+
+/* === responsive */
+
+@media (min-width: 816px) {
+
+    .card__container{    
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 210px 130px 350px;
+        gap: 10px;
+    }
 }
 
 
