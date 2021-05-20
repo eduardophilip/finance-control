@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Finance control</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -31,9 +31,9 @@
 <body>
   <!-- Add your site or application content here -->
 
-  <div class="main">
+  <main class="main">
     
-    <section class="header">
+    <header class="header">
 
       <div class="container header__container">
         <button class="header__btn">
@@ -47,7 +47,7 @@
         </div>
       </div>
 
-    </section>
+    </header>
     
     <section class="folder-open">
       <img class="folder-open__icon" src="img/folder-open.svg" alt="icon-folder">
@@ -59,39 +59,39 @@
 
       <div class="container card__container">
 
-        <div class="card__total">
-          <h3 class="card__header">
-            <span class="card__name--total">Total</span>
-            <img class="card__icon" src="img/dolar-icon.svg" alt="income icon">
-          </h3>
+        <div class="card__item card--total">
+          <div class="card__header">
+            <span class="card__name--total t-h1">Total</span>
+            <img class="card__icon card__icon--total" src="img/dolar-icon.svg" alt="income icon">
+          </div>
           <div class="card__chart--total">
             <!-- Update with the library chart.js -->
             <img src="img/chart-temporario.svg" alt="">
           </div>
-          <p class="card__value--total">€ 100,15</p>
+          <p class="card__value card__value--total">€ 100,15</p>
         </div>
 
         <div class="card__item card--income">
-          <h3 class="card__header">
+          <div class="card__header">
             <img class="card__icon" src="img/income-icon.svg" alt="income icon">
-            <span class="card__name">Income</span>
-          </h3>
+            <span class="card__name t-h1">Income</span>
+          </div>
           <p class="card__value">€ 9.291,23</p>
         </div>
 
         <div class="card__item card--expense">
-          <h3 class="card__header">
+          <div class="card__header">
             <img class="card__icon" src="img/expense-icon.svg" alt="income icon">
-            <span class="card__name">Expense</span>
-          </h3>
+            <span class="card__name t-h1">Expense</span>
+          </div>
           <p class="card__value">€ 8.000,00</p>
         </div>
 
         <div class="card__item card--savings">
-          <h3 class="card__header">
+          <div class="card__header">
             <img class="card__icon" src="img/savings-icon.svg" alt="income icon">
-            <span class="card__name">savings</span>
-          </h3>
+            <span class="card__name t-h1">savings</span>
+          </div>
           <p class="card__value">€ 1.000,00</p>
         </div>
 
@@ -102,19 +102,51 @@
 
         <div class="card-template">
           
-          <h3 class="card-template__title">Define your monthly transaction templates</h3>
-          <nav class="card-template__nav">
-            <ul class="card-tempate__list">
-              <h1 class="card-template__title">income</h1>
-              <li class="card-template__item">1</li>
-            </ul>
+          <h3 class="card-template__headline">Define your monthly transaction templates</h3>
 
-            <ul class="card-tempate__item">
-              <h2 class="card-template__title">Expense</h2>
-              <li class="card-template__name">1</li>
-              <li>2</li>
-              <li>3</li>
-            </ul>
+          <nav class="card-template__nav">
+            <div class="card-template__income">
+              <div class="card-template__title">
+                <button class="card-template__chevron">
+                  <img src="img/chevron.svg" alt="">
+                </button>
+                <span class="card-template__title--name">Income</span>
+                <button class="card-template__btn-add">
+                  <img src="img/btn-add.svg" alt="">
+                </button>
+              </div>
+              <ul class="card-tempate__list">
+                
+                <li class="card-template__item">
+                  <span class="card-template__name">Salário</span>
+                  <button class="card-template__btn-minus">
+                    <img src="img/btn-minus.svg" alt="">
+                  </button>
+                </li>
+
+              </ul>
+            </div>
+
+            <div class="card-template__expense">
+              <div class="card-template__title">
+                <button class="card-template__chevron">
+                  <img src="img/chevron.svg" alt="">
+                </button>
+                <span class="card-template__title--name">Expense</span>
+                <button class="card-template__btn-add">
+                  <img src="img/btn-add.svg" alt="">
+                </button>
+              </div>
+              <ul class="card-tempate__item">
+                <li class="card-template__name">
+                  <span class="card-template__name">Salário</span>
+                  <button class="card-template__btn-minus">
+                    <img src="img/btn-minus.svg" alt="">
+                  </button>
+                </li>
+              </ul>
+            </div>
+
           </nav>
 
         </div>
@@ -123,7 +155,7 @@
 
     </section>
 
-  </div>
+  </main>
   
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
