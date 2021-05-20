@@ -86,6 +86,10 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+  * {
+    box-sizing: border-box;
+  }
+
   :root {
     --header-background: #33B86C;
     --main-background: #F5F5F5;
@@ -112,10 +116,19 @@ textarea {
     font-family: 'Roboto', sans-serif;
   }
 
+  li {
+    list-style: none;
+  }
+
+  button {
+    background: none;
+    border: none;
+  }
+
   .main {
-    display: grid;
+    /* display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 10vh 5vh 100vh;
+    grid-template-rows: 5vh 5vh 100vh; */
     min-height: 100vh;
     background-color: var(--main-background);
   }
@@ -125,7 +138,12 @@ textarea {
     margin-right: 5vw;
   }
 
-
+  .t-h1 {
+    color: var(--white);
+    font-size: 1.8rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
 
 /* ==========================================================================
    Helper classes
