@@ -116,6 +116,26 @@ textarea {
     font-family: 'Roboto', sans-serif;
   }
 
+  ::-webkit-scrollbar {
+    width: 8px; 
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.10);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, 0.15);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cccccc;
+    border-radius: 25px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ccccccda; 
+  }
+
   li {
     list-style: none;
   }
@@ -124,6 +144,8 @@ textarea {
     background: none;
     border: none;
   }
+
+
 
   .main {
     /* display: grid;
