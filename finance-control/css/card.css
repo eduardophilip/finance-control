@@ -1,5 +1,5 @@
 .cards {
-  
+  margin-bottom: 20px;
    
 }
 
@@ -88,33 +88,41 @@
     border-radius: var(--border-radius);
 }
 .card-template__headline {
+    text-align: center;
     color: var(--card-template--title);
 }
 
 .card-template__nav {
-
+    border-radius: var(--border-radius);
+    height: 261px;
+    overflow: overlay;
 }
 
 .card-template__income {
     background-color: var(--income-card);
     box-shadow: var(--box-shadow);
     border-radius: 10px 10px 0 0;
+    padding: 2px;
 }
 
 .card-template__expense {
     background-color: var(--expense-card);
     box-shadow: var(--box-shadow);
     border-radius: 0 0 10px 10px;
+    padding: 2px;
 }
 
 .card-template__title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 0.5fr 4fr 2fr;
+    padding-top: 10px;
 }
 
 .card-template__chevron {
-
+    margin-left: 1rem;
+}
+.card-template__chevron--down {
+    transform: rotate(90deg);
 }
 
 .card-template__title--name {
@@ -122,11 +130,11 @@
 }
 
 .card-template__btn-add {
-
+  
 }
 
 .card-template__list {
-
+    
 }
 
 .card-template__item {
@@ -148,13 +156,14 @@
     grid-column-end: 5;
     grid-row-start: 2;
     grid-row-end: 4;
-    background-color: var(--white);
     display: flex;
     flex-direction: column;
 }
 
 .card-chart__item {
-
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
 }
 
 .chart--inc__exp {
