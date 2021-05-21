@@ -114,6 +114,7 @@ textarea {
 
   body {
     font-family: 'Roboto', sans-serif;
+    background-color: var(--main-background);
   }
 
   ::-webkit-scrollbar {
@@ -152,7 +153,7 @@ textarea {
     grid-template-columns: 1fr;
     grid-template-rows: 5vh 5vh 100vh; */
     min-height: 100vh;
-    background-color: var(--main-background);
+    /* background-color: var(--main-background); */
   }
 
   .container {
@@ -164,6 +165,24 @@ textarea {
     color: var(--white);
     font-size: 1.8rem;
     font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .t-h2 {
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  .t-h3 {
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 700;
+    -webkit-text-stroke: 0.9px black;;
+    
+  }
+
+  .t-h3:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
 
