@@ -1,12 +1,14 @@
 .header {
-    
     background-color: var(--header-background);
+    box-shadow: var(--box-shadow);
 }
 
 .header__container {
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 
 .header__btn {
@@ -16,6 +18,7 @@
 
 .header__logo {
     display: flex;
+    
 }
 
 .header__image {
@@ -31,16 +34,22 @@
 }
 
 .folder-open {
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .folder-open__icon {
-
+    width: 30px;
+    height: 20px;
+    margin-right: 1rem;
 }
 
-.folder-open__name {
-
+.folder-open__year {
+  cursor: pointer;
 }
 
+.folder-open__month {
+    cursor: pointer;  
+}
