@@ -1,0 +1,198 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Finance control</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/card.css">
+  <link rel="stylesheet" href="css/card-monthly-page.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!-- Add your site or application content here -->
+
+  <main class="main">
+    
+    <header class="header">
+
+      <div class="container header__container">
+        <button class="header__btn">
+          <img src="img/Hamburger-menu.svg" alt="menu-buttom">
+        </button>
+        <div class="header__logo"></div>
+        <div class="header__user">
+          <img src="img/user-icon.svg" alt="user-icon">
+        </div>
+      </div>
+
+    </header>
+    
+    <section class="folder-open">
+      <img class="folder-open__icon" src="img/folder-open.svg" alt="icon-folder">
+      <button class="folder-open__year t-h3">2021</button>
+      <!-- <button class="folder-open__month t-h3">/ May</button> --> <!-- for second page -->
+    </section>
+
+    <section class="cards">
+
+      <div class="container card__container">
+
+        <div class="card__item card--total">
+          <div class="card__header">
+            <span class="card__name--total t-h1">Total</span>
+            <img class="card__icon card__icon--total" src="img/dolar-icon.svg" alt="income icon">
+          </div>
+          <div class="card__chart--total">
+            <!-- Update with the library chart.js -->
+            <img src="img/chart-temporario.svg" alt="">
+          </div>
+          <p class="card__value card__value--total">€ 100,15</p>
+        </div>
+
+        <div class="card__item card--income">
+          <div class="card__header">
+            <img class="card__icon" src="img/income-icon.svg" alt="income icon">
+            <span class="card__name t-h1">Income</span>
+          </div>
+          <p class="card__value">€ 9.291,23</p>
+        </div>
+
+        <div class="card__item card--expense">
+          <div class="card__header">
+            <img class="card__icon" src="img/expense-icon.svg" alt="income icon">
+            <span class="card__name t-h1">Expense</span>
+          </div>
+          <p class="card__value">€ 8.000,00</p>
+        </div>
+
+        <div class="card__item card--savings">
+          <div class="card__header">
+            <img class="card__icon" src="img/savings-icon.svg" alt="income icon">
+            <span class="card__name t-h1">savings</span>
+          </div>
+          <p class="card__value">€ 1.000,00</p>
+        </div>
+
+        <div class="card-table">
+          <div class="card-table__container">
+            <table class="table-layout">
+              <thead class="table__head">
+                <tr class="table__head-tr">
+                  <th>Description</th>
+                  <th>Value</th>
+                  <th>Date</th>
+                  <th>Remove/Edit</th>
+                </tr>
+              </thead>
+              <tbody class="table__body">
+               
+                <tr class="table__body-tr table__body--savings">
+                  <td>savings</td>
+                  <td>€ 50,00</td>
+                  <td>00/00/0000</td>
+                  <td class="table__body-tr--remove">
+                    <img src="img/btn-delete.svg" alt="btn-delete">
+                    <img src="img/edit.svg" alt="btn-delete">
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card-template">
+          
+          <h3 class="card-template__headline">Define your monthly transaction templates</h3>
+
+          <nav class="card-template__nav">
+            
+            <div class="card-template__income">
+              <div class="card-template__title">
+                <button class="card-template__chevron">
+                  <img src="img/chevron.svg" alt="">
+                </button>
+                <span class="card-template__title--name t-h2">Income</span>
+                <button class="card-template__btn-add"> 
+                  <img src="img/btn-add.svg" alt="">
+                </button>
+              </div>
+              <ul class="card-tempate__list">
+                
+               <!--  <li class="card-template__item">
+                  <span class="card-template__name">Salário</span>
+                  <button class="card-template__btn-minus">
+                    <img src="img/btn-minus.svg" alt="">
+                  </button>
+                </li> -->
+
+              </ul>
+            </div>
+
+            <div class="card-template__expense">
+              <div class="card-template__title">
+                <button class="card-template__chevron">
+                  <img src="img/chevron.svg" alt="">
+                </button>
+                <span class="card-template__title--name t-h2">Expense</span>
+                <button class="card-template__btn-add">
+                  <img src="img/btn-add.svg" alt="">
+                </button>
+              </div>
+              <ul class="card-tempate__item">
+                <!-- Updated by modal Monthly income and expense template -->
+                <!-- 
+                <li class="card-template__name">
+                  <span class="card-template__name">Salário</span>
+                  <button class="card-template__btn-minus">
+                    <img src="img/btn-minus.svg" alt="">
+                  </button>
+                </li> -->
+                
+              </ul>
+            </div>
+
+          </nav>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+  
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
