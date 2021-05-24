@@ -7,6 +7,7 @@
     color: var(--white);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
 }
 
 .card--total {
@@ -34,13 +35,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 4.8rem;
 }
 
 .card__value--total {
     color: var(--total-title);
     font-weight: 700;   
-    font-size: 2rem;
+    font-size: 3.2rem;
     padding: 0;
 }
 
@@ -113,6 +114,7 @@
 }
 
 .card-template__title {
+    height: 4.8rem;
     display: grid;
     grid-template-columns: 0.5fr 4fr 2fr;
     padding-top: 10px;
@@ -176,13 +178,13 @@
 
 /* === responsive */
 
-@media (min-width: 816px) {
+@media (min-width: 1140px) {
 
     .card__container{    
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 210px 130px 350px;
-        gap: 10px;
+        grid-template-columns: repeat(4, minmax(243px, 1fr));
+        grid-template-rows: 210px 130px 36vh;
+        gap: 20px;
     }
 }
 
