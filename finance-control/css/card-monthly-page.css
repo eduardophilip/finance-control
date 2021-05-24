@@ -83,7 +83,44 @@ background-color: var(--expense-card);
     background-color: var(--savings__card);
 }
 
+/* === Templete === */
 
+.template__income,
+.template__expense {
+    padding: 1rem;
+}
+
+.template__title {
+   color: var(--card-template--title); 
+}
+
+.template__list {
+    
+    color:  var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    font-weight: 700; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.template__list--income {
+    background-color: var(--income-card);
+}
+
+.template__list--expense {
+    background-color: var(--expense-card);
+}
+
+.template__name {
+
+}
+
+.template__btn-add {
+
+}
 
 
 
