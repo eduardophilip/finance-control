@@ -1,6 +1,6 @@
 .header {
-    background-color: var(--header-background);
-    box-shadow: var(--box-shadow);
+    background-color: #007d45;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.507);
     padding: 5px;
 }
 
@@ -9,12 +9,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+    position: relative; 
 }
 
 .header__btn {
+    padding: 1rem;
     border: none;
-    background-color: var(--header-background);
+    border-radius: var(--border-radius);
+    background-color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    transition: 500ms;
+}
+
+.header__btn--clicked {
+    left: 260px;
+}
+
+.header__btn img {
+    width: 28px;
 }
 
 .header__logo {

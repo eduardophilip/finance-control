@@ -93,7 +93,7 @@ textarea {
   :root {
     --header-background: #33B86C;
     --main-background: #F5F5F5;
-    --side-bar-background: rgba(64, 64, 64, 98%);
+    --sidebar-background: rgba(64, 64, 64, 98%);
     --modal-background: rgba(64, 64, 64, 0.75);
     --white: #ffffff;
     --black: #000000;
@@ -142,6 +142,11 @@ textarea {
     background: #ccccccda; 
   }
 
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
   li {
     list-style: none;
   }
@@ -151,7 +156,9 @@ textarea {
     border: none;
   }
 
-
+  a {
+    text-decoration: none;
+  }
 
   .main {
     min-height: 100vh;

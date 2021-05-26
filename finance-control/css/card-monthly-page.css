@@ -122,5 +122,21 @@ background-color: var(--expense-card);
 
 }
 
+/* === Card header == */
+
+.card__header--monthly__page {
+    justify-content: space-around;
+}
+
+.card__btn-income {
+    
+}
+.card__btn-expense {
+    
+}
+.card__btn-savings {
+    
+}
+
 
 

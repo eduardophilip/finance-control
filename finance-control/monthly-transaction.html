@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/card.css">
   <link rel="stylesheet" href="css/card-monthly-page.css">
+  <link rel="stylesheet" href="css/sidebar.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -33,7 +34,97 @@
   <!-- Add your site or application content here -->
 
   <main class="main">
-    
+    <nav class="sidebar">
+      
+      <div class="sidebar-add-year">
+
+        <span class="sidebar-add-year__name">Add year</span>
+          <img class="sidebar-add-year__btn" src="img/btn-calendar-plus-regular.svg" alt="">
+
+      </div>
+
+      <ul class="sidebar__list">
+
+        <li class="sidebar-year">
+          <a class="sidebar-year__link sidebar--link" href="#" >
+            <img class="sidebar-year__icon" src="img/chevron.svg" alt="">
+            <span class="sidebar-year__name">2021</span>
+          </a>
+
+          <ul class="sidebar__list sidebar__list--dropdown">
+
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">January</span> 
+              </a>
+
+            </li>
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">February</span> 
+              </a>
+
+            </li>
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">March</span> 
+              </a>
+
+            </li>
+
+          </ul>
+         
+
+        </li>
+
+        <li class="sidebar-year">
+          <a class="sidebar-year__link sidebar--link" href="#" >
+            <img class="sidebar-year__icon" src="img/chevron.svg" alt="">
+            <span class="sidebar-year__name">2022</span>
+          </a>
+
+          <ul class="sidebar__list sidebar__list--dropdown">
+
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">January</span> 
+              </a>
+
+            </li>
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">February</span> 
+              </a>
+
+            </li>
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">March</span> 
+              </a>
+
+            </li>
+
+          </ul>
+         
+
+        </li>
+        
+      </ul>
+
+    </nav>
+
     <header class="header">
 
       <div class="container header__container">
@@ -47,6 +138,8 @@
       </div>
 
     </header>
+
+
     
     <section class="folder-open">
       <img class="folder-open__icon" src="img/folder-open.svg" alt="icon-folder">
@@ -71,25 +164,28 @@
         </div>
 
         <div class="card__item card--income">
-          <div class="card__header">
+          <div class="card__header card__header--monthly__page">
             <img class="card__icon" src="img/income-icon.svg" alt="income icon">
             <span class="card__name t-h1">Income</span>
+            <img class="card__btn-income" src="img/btn-add.svg" alt="btn add">
           </div>
           <p class="card__value">€ 9.291,23</p>
         </div>
 
         <div class="card__item card--expense">
-          <div class="card__header">
+          <div class="card__header card__header--monthly__page">
             <img class="card__icon" src="img/expense-icon.svg" alt="income icon">
             <span class="card__name t-h1">Expense</span>
+            <img class="card__btn-expense" src="img/btn-add.svg" alt="btn add">
           </div>
           <p class="card__value">€ 8.000,00</p>
         </div>
 
         <div class="card__item card--savings">
-          <div class="card__header">
+          <div class="card__header card__header--monthly__page">
             <img class="card__icon" src="img/savings-icon.svg" alt="income icon">
             <span class="card__name t-h1">savings</span>
+            <img class="card__btn-savings" src="img/btn-add.svg" alt="btn add">
           </div>
           <p class="card__value">€ 1.000,00</p>
         </div>
@@ -127,19 +223,19 @@
           <div  class="template__income">
 
             <h3 class="template__title">Templete income</h3>
-            <div class="template__list template__list--income">
+           <!--  <div class="template__list template__list--income">
               <span class="template__name">Salário</span>
               <img class="template__btn-add" src="img/btn-add.svg" alt="btn add">
-            </div>
+            </div> -->
 
           </div>
           <div  class="template__expense">
 
             <h3 class="template__title">Templete income</h3>
-            <div class="template__list template__list--expense">
+            <!-- <div class="template__list template__list--expense">
               <span class="template__name">Alimentação</span>
               <img class="template__btn-add" src="img/btn-add.svg" alt="btn add">
-            </div>
+            </div> -->
 
           </div>
 
@@ -154,6 +250,7 @@
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/sidebar.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

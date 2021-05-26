@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/card.css">
+  <link rel="stylesheet" href="css/sidebar.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -32,6 +33,96 @@
   <!-- Add your site or application content here -->
 
   <main class="main">
+    <nav class="sidebar">
+      
+      <div class="sidebar-add-year">
+
+        <span class="sidebar-add-year__name">Add year</span>
+          <img class="sidebar-add-year__btn" src="img/btn-calendar-plus-regular.svg" alt="">
+
+      </div>
+
+      <ul class="sidebar__list">
+
+        <li class="sidebar-year">
+          <a class="sidebar-year__link sidebar--link" href="#" >
+            <img class="sidebar-year__icon" src="img/chevron.svg" alt="">
+            <span class="sidebar-year__name">2021</span>
+          </a>
+
+          <ul class="sidebar__list sidebar__list--dropdown">
+
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">January</span> 
+              </a>
+
+            </li>
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">February</span> 
+              </a>
+
+            </li>
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">March</span> 
+              </a>
+
+            </li>
+
+          </ul>
+         
+
+        </li>
+
+        <li class="sidebar-year">
+          <a class="sidebar-year__link sidebar--link" href="#" >
+            <img class="sidebar-year__icon" src="img/chevron.svg" alt="">
+            <span class="sidebar-year__name">2022</span>
+          </a>
+
+          <ul class="sidebar__list sidebar__list--dropdown">
+
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">January</span> 
+              </a>
+
+            </li>
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">February</span> 
+              </a>
+
+            </li>
+            <li class="sidebar-month">
+
+              <a class="sidebar-month__link sidebar--link" href="#">
+                <img class="sidebar-month__icon" src="img/calendar-regular.svg" alt="image calendar"> 
+                <span class="sidebar-month__name">March</span> 
+              </a>
+
+            </li>
+
+          </ul>
+         
+
+        </li>
+        
+      </ul>
+
+    </nav>
     
     <header class="header">
 
@@ -162,6 +253,7 @@
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/sidebar.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

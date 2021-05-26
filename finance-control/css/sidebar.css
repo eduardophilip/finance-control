@@ -1,0 +1,102 @@
+.sidebar {
+    position: fixed;
+    width: 280px;
+    height: 100vh;
+    left: -280px;
+    background-color: var(--sidebar-background);
+    color: var(--white);
+    transition: 500ms;
+    z-index: 2;
+}
+
+.sidebar--active {
+    left: 0;
+}
+
+.sidebar-add-year {
+    display: flex;
+
+    align-items: center;
+    padding: 1.8rem;
+    font-weight: 700;
+}
+
+.sidebar-add-year__name {
+    font-size: 2rem;
+}
+
+
+.sidebar-add-year__btn {
+    width: 35px;
+    height: 35px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.sidebar__list {
+    width: 100%;
+    height: 100%;
+    font-size: 1.8rem;
+    transition: 500ms;
+}
+
+.sidebar__list--dropdown {
+    display: none;
+}
+
+.sidebar-year {
+    margin-bottom: 1rem;
+}
+
+.sidebar--link {
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    width: 100%;
+    padding: 0.5rem 0 0.5rem 1.8rem;
+    border-left: 3px solid transparent;
+}
+
+.sidebar--link:hover {
+    color: cyan;
+    background-color: rgb(64, 64, 64);
+    border-left-color: cyan;
+}
+
+.sidebar-year__link{
+    font-weight: 700;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.116);
+}
+
+.sidebar-year__icon {
+    transition: 500ms;
+    margin-right: 1rem;
+}
+.sidebar-year__icon--rotate {
+    transform: rotate(90deg);
+}
+
+.sidebar-year__name {
+
+}
+
+.sidebar-month {
+    line-height: 4rem;
+    
+}
+
+
+.sidebar-month__link {
+    padding-left: 3.8rem;
+}
+
+.sidebar-month__icon {
+    margin-right: 1rem;
+    width: 20px;
+    height: 20px;
+}
+
+.sidebar-month__name {
+    
+}
+
