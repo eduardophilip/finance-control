@@ -1,20 +1,21 @@
 .card-table {
     grid-column: 2/5;
     grid-row: 2/4;
-    background-color: var(--white);
+    background-color: var(--primary);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     font-size: 1.8rem;
-    height: 501.72px;
+    height: 501px;
     overflow: auto;
 }
+
 .card-table__container{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
     min-width: 100%;
-    
 }
 
 .table-layout {
@@ -34,7 +35,7 @@
 
 .table__head-tr th {
     color: var(--card-template--title);
-    background-color: var(--white);
+    background-color: var(--primary);
     font-weight: 400;
     padding: 1.6rem 3.2rem;
     text-align: center;
@@ -85,7 +86,7 @@ background-color: var(--expense-card);
 
 /* === Templete === */
 
-.template__income,
+/* .template__income,
 .template__expense {
     padding: 1rem;
 }
@@ -120,7 +121,7 @@ background-color: var(--expense-card);
 
 .template__btn-add {
 
-}
+} */
 
 /* === Card header == */
 
@@ -137,6 +138,8 @@ background-color: var(--expense-card);
 .card__btn-savings {
     
 }
+
+
 
 
 

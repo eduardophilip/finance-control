@@ -1,28 +1,28 @@
 .cards {
-  margin-bottom: 20px;
-   
+  margin: 2rem 0 2rem 0;
 }
 
 .card__item {
-    color: var(--white);
+    background-color: var(--primary);
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     margin-bottom: 20px;
 }
 
 .card--total {
-    background-color: var(--white);
-    grid-row-start: 1;
-    grid-row-end: 3;
+    background-color: var(--primary);
+    color: var(--white);
+    grid-row-start: 2;
+    grid-row-end: 5;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-direction: column;
+    font-weight: 400; 
 }
 
 .card__name--total {
-    color: var(--total-title);
-    font-weight: 700;
+
 }
 
 .card__icon--total {
@@ -38,11 +38,9 @@
     font-size: 4.8rem;
 }
 
-.card__value--total {
-    color: var(--total-title);
-    font-weight: 700;   
-    font-size: 3.2rem;
-    padding: 0;
+.card__value--total {  
+    font-size: 4.2rem;
+    padding-bottom: 1rem;
 }
 
 .card__chart--total {
@@ -50,20 +48,20 @@
 }
 
 .card--income {
-    background-color: var(--income-card);
+    color: var(--income-card);
 }
 .card--expense {
-    background-color: var(--expense-card);
+    color: var(--expense-card);
 }
 .card--savings {
-    background-color: var(--savings__card);
+    color: var(--savings__card);
 }
 
 .card__header {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 1rem;
     height: 60px;
 }
 
@@ -74,12 +72,12 @@
 }
 
 .card__name {
-
+    
 }
 
 /* ===== CARD TEMPLATES ===== */
 
-.card-template {
+/* .card-template {
     grid-column-start: 1;
     grid-column-end: 2;
     grid-row-start: 3;
@@ -149,7 +147,7 @@
 
 .card-template__btn-minus {
 
-}
+} */
 
 /*  ===== Cards CHARTS ===== */
 
@@ -161,7 +159,8 @@
 }
 
 .card-chart__item {
-    background-color: var(--white);
+    background-color: var(--primary);
+    color: var(--white);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
 }
@@ -176,11 +175,12 @@
 
 /* === responsive */
 
-@media (min-width: 1140px) {
+
+@media (min-width: 1000px) {
 
     .card__container{    
         display: grid;
-        grid-template-columns: repeat(4, minmax(243px, 1fr));
+        grid-template-columns: repeat(3, minmax(243px, 1fr));
         grid-template-rows: 210px 130px 36vh;
         gap: 20px;
     }
