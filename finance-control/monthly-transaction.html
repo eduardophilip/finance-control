@@ -26,6 +26,8 @@
   <link rel="stylesheet" href="css/card.css">
   <link rel="stylesheet" href="css/card-monthly-page.css">
   <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/modal.css">
+
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -162,34 +164,40 @@
             <!-- Update with the library chart.js -->
             <img src="img/chart-temporario.svg" alt="">
           </div>
-          <p class="card__value card__value--total">€ 100,15</p>
+          <p class="card__value card__value--total">€ 0.00</p>
         </div>
 
         <div class="card__item card--income">
           <div class="card__header card__header--monthly__page">
             <img class="card__icon" src="img/income-icon.svg" alt="income icon">
             <span class="card__name t-h1">Income</span>
-            <img class="card__btn-income" src="img/btn-add.svg" alt="btn add">
+            <button class="card__btn-income">
+              <img src="img/btn-add.svg" alt="btn add">
+            </button>
           </div>
-          <p class="card__value">€ 9.291,23</p>
+          <p class="card__value">€0.00</p>
         </div>
 
         <div class="card__item card--expense">
           <div class="card__header card__header--monthly__page">
             <img class="card__icon" src="img/expense-icon.svg" alt="income icon">
             <span class="card__name t-h1">Expense</span>
-            <img class="card__btn-expense" src="img/btn-add.svg" alt="btn add">
+            <button class="card__btn-expense">
+              <img src="img/btn-add.svg" alt="btn add">
+            </button>
           </div>
-          <p class="card__value">€ 8.000,00</p>
+          <p class="card__value">€ 0.00</p>
         </div>
 
         <div class="card__item card--savings">
           <div class="card__header card__header--monthly__page">
             <img class="card__icon" src="img/savings-icon.svg" alt="income icon">
             <span class="card__name t-h1">savings</span>
-            <img class="card__btn-savings" src="img/btn-add.svg" alt="btn add">
+            <button class="card__btn-savings">
+              <img src="img/btn-add.svg" alt="btn add">
+            </button>
           </div>
-          <p class="card__value">€ 1.000,00</p>
+          <p class="card__value">€ 0.00</p>
         </div>
 
         <div class="card-table">
@@ -248,11 +256,56 @@
     </section>
 
   </main>
+
+  <div class="modal">
+    <div class="modal__content">
+      <div class="modal__form">
+        <h2 class="modal__header "><!-- dinamico --></h2>
+
+        <form action="">
+
+          <div class="modal__name">
+            <label class="sr-only" for="description">Transaction name</label>
+            <input 
+            class="modal__input" 
+            type="text" 
+            id="description"
+            placeholder="Transaction name">
+          </div>
+          <div class="modal__amount">
+            <label class="sr-only" for="amount">amount</label>
+            <input 
+            class="modal__input" 
+            type="number" 
+            id="amount"
+            placeholder="0.00">
+            <small class="modal__help">use dots to decimal places</small>
+          </div>
+          <div class="modal__date">
+            <label class="sr-only" for="date">Date</label>
+            <input 
+            class="modal__input" 
+            type="date"
+            id="date"
+            
+            >
+          </div>
+          <div class="modal__button">
+            <button class="modal__button-cancel">Cancel</button>
+            <button class="modal__button-save" type="submit">Save</button>
+          </div>
+        	
+      </form>
+
+      </div>
+    </div>
+  </div>
   
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
   <script src="js/sidebar.js"></script>
+  <script src="js/modal.js"></script>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>
