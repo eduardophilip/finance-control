@@ -23,7 +23,7 @@ const toggleSidebar = () => {
 headerBtn.addEventListener('click', toggleSidebar)
 
 for(let item of yearLink) {
-    console.log(item)
+   
     
     item.onclick = () => {
         list.classList.toggle('sidebar__list--dropdown');
