@@ -10,17 +10,13 @@
 }
 
 .card-table__container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100%;
     min-width: 100%;
 }
 
 .table-layout {
     width: 90%;
-    
+    margin: 0 auto;
     border-spacing: 0 0.5rem;
     
 }
