@@ -1,3 +1,5 @@
+import {Chart } from 'chart.js';
+
 const submitTransaction = document.querySelector('.submit-form')
 
 
@@ -103,16 +105,37 @@ const updateBalance = (transactions) => {
 
 }
 
+const updateChartTotal = () => {
+    const chartTotal = document.getElementById('chart-total');
+    
+    const doughnutChart = new Chart(chartTotal, {
+        type: 'doughnut',
+        data: {
+            labels: ['Income', 'Expense', 'Savings' ],
+            datasets: [{
+                label: 'Income',
+                data: [800, 200]
+            }]
+        },
+        options: {}
+    
+    });
+    
+
+    return doughnutChart
+
+}
+
+const addTransaction = () => {
+    
+}
+
+submitTransaction.addEventListener('submit', addTransaction)
 
 const init = () => {
     Transactions.forEach(displayInDOM);
     updateBalance(Transactions)
+    updateChartTotal()  
 }
 
 init()
-
-const addTransaction = {
-
-}
-
-submitTransaction.addEventListener('submit', addTransaction)
