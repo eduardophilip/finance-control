@@ -1,9 +1,10 @@
-import {Chart } from 'chart.js';
+import { Chart, registerables } from 'chart.js';
+Chart.register(...registerables);
 
 const submitTransaction = document.querySelector('.submit-form')
 
 
-const Transactions = [ /*How to export this const */ 
+export const Transactions = [ /*How to export this const */ 
     {
         type: 'income',
         transaction: {
@@ -78,7 +79,7 @@ const updateBalance = (transactions) => {
 
     const expense = () => {
         const expense = []
-        for (transaction of Transactions) {
+        for (let transaction of Transactions) {
             if (transaction.type === 'expense') {
                 expense.push(transaction)
             }
@@ -89,7 +90,7 @@ const updateBalance = (transactions) => {
 
     const savings = () => {
         const savings = []
-        for (transaction of Transactions) {
+        for ( let transaction of Transactions) {
             if (transaction.type === 'savings') {
                 savings.push(transaction)
             }
@@ -106,23 +107,34 @@ const updateBalance = (transactions) => {
 }
 
 const updateChartTotal = () => {
-    const chartTotal = document.getElementById('chart-total');
+    const chartTotal = document.querySelector('.chart-total');
     
     const doughnutChart = new Chart(chartTotal, {
         type: 'doughnut',
         data: {
-            labels: ['Income', 'Expense', 'Savings' ],
+            labels: ['INC', 'EXP', 'SAV' ],
             datasets: [{
                 label: 'Income',
-                data: [800, 200]
+                data: [800, -250, -60],
+                backgroundColor: [
+                    '#0bad39',
+                    '#ff0000',
+                    '#00c3ff'
+                ],
+                hoverOffset: 4
             }]
         },
-        options: {}
+        options: {
+            plugins:{
+                legend: {
+                    display:  true,
+                    position: 'bottom'
+                }
+
+            }
+        }
     
     });
-    
-
-    return doughnutChart
 
 }
 
