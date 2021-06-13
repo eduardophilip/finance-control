@@ -3,9 +3,12 @@ const expenseBtn = document.querySelector(".card__btn-expense");
 const savingsBtn = document.querySelector(".card__btn-savings");
 const modal = document.querySelector(".modal")
 const modalHeader = document.querySelector(".modal__header");
-const inputName = document.getElementById('description')
-const inputAmount = document.getElementById('amount')
-const inputDate = document.getElementById('date')
+
+const inputName = document.getElementById('description');
+const inputAmount = document.getElementById('amount');
+const inputDate = document.getElementById('date');
+
+const btnCancel = document.querySelector('.modal__button-cancel');
 
 const openModalIncome = () => {
     modalHeader.textContent = 'Add income';
@@ -15,7 +18,7 @@ const openModalIncome = () => {
     inputAmount.classList.add('modal__input-amount--income');
     inputDate.classList.add('modal__input-date--income');
 
-    modal.classList.toggle('modal--active')
+    modal.classList.add('modal--active')
 
 }
 const openModalExpense = () => {
@@ -26,7 +29,7 @@ const openModalExpense = () => {
     inputAmount.classList.add('modal__input-amount--expense');
     inputDate.classList.add('modal__input-date--expense');
 
-    modal.classList.toggle('modal--active')
+    modal.classList.add('modal--active')
 }
 const openModalSavings = () => {
     modalHeader.textContent = 'Add Savings'
@@ -36,12 +39,26 @@ const openModalSavings = () => {
     inputAmount.classList.add('modal__input-amount--savings');
     inputDate.classList.add('modal__input-date--savings');
 
-    modal.classList.toggle('modal--active')
+    modal.classList.add('modal--active')
+}
+
+const closeModal = (e) => {
+    const classClicked = e.target.classList[0];
+    const classNames = ['modal', 'modal__button-cancel']
+    const classNameExists = classNames.some(className => className === classClicked);
+
+   if (classNameExists) {
+       console.log(classClicked)
+       modal.classList.remove('modal--active')
+   }
+
 }
 
 incomeBtn.addEventListener("click", openModalIncome)
 expenseBtn.addEventListener("click", openModalExpense)
 savingsBtn.addEventListener("click", openModalSavings)
+
+modal.addEventListener('click', closeModal)
 
 
 
