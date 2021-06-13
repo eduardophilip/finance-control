@@ -63,46 +63,56 @@ const displayInDOM = (Transactions) => {
         </td>`
 }
 
-const updateBalance = (transactions) => {
+const sumIncome = () =>  {
+    const income = []
+    for (let transaction of Transactions) {
+        if(transaction.type === 'income') {
+            income.push(transaction)
+        }
+    }    
+
+    const totalIncome = income.map(items => items.transaction.amount)
+    return totalIncome.reduce((accu, value) => accu + value, 0);
+
+}
+
+const sumExpense = () => {
+    const expense = []
+    for (let transaction of Transactions) {
+        if (transaction.type === 'expense') {
+            expense.push(transaction)
+        }
+    }
+    const totalexpense = expense.map(items => items.transaction.amount)
+    return totalexpense.reduce((accu, value) => accu + value, 0)
+}
+const sumSavings = () => {
+    const savings = []
+    for ( let transaction of Transactions) {
+        if (transaction.type === 'savings') {
+            savings.push(transaction)
+        }
+    }
+    const totalSavings = savings.map(items => items.transaction.amount)
+    return totalSavings.reduce((accu, value) => accu + value, 0)
+}
+
+const totalBalance = () => {
+
+    const transactionAmounts = Transactions.map(items => items.transaction.amount);
+    return transactionAmounts.reduce((accu, currentValue) => accu + currentValue, 0);
+} 
+
+const updateBalance = () => {
     const totalBalanceDisplay = document.querySelector('.card__value--total');
     const incomeBalanceDisplay = document.querySelector('.card__value--income');
     const expenseBalanceDisplay = document.querySelector('.card__value--expense');
     const savingsBalanceDisplay = document.querySelector('.card__value--savings');
 
-    const transactionAmounts = transactions.map(items => items.transaction.amount);
-
-    const totalBalance = transactionAmounts.reduce((accu, currentValue) => accu + currentValue, 0);
-
-    const income = transactionAmounts
-        .filter(items => items > 0)
-        .reduce((accu, income) => accu + income, 0);
-
-    const expense = () => {
-        const expense = []
-        for (let transaction of Transactions) {
-            if (transaction.type === 'expense') {
-                expense.push(transaction)
-            }
-        }
-        const totalexpense = expense.map(items => items.transaction.amount)
-        return totalexpense.reduce((accu, value) => accu + value, 0)
-    }
-
-    const savings = () => {
-        const savings = []
-        for ( let transaction of Transactions) {
-            if (transaction.type === 'savings') {
-                savings.push(transaction)
-            }
-        }
-        const totalSavings = savings.map(items => items.transaction.amount)
-        return totalSavings.reduce((accu, value) => accu + value, 0)
-    }
-
-    totalBalanceDisplay.textContent = `€ ${totalBalance.toFixed(2)}`
-    incomeBalanceDisplay.textContent = `€ ${income.toFixed(2)}`
-    expenseBalanceDisplay.textContent = `€ ${expense().toFixed(2)}`
-    savingsBalanceDisplay.textContent = `€ ${savings().toFixed(2)}`
+    totalBalanceDisplay.textContent = `€ ${totalBalance().toFixed(2)}`
+    incomeBalanceDisplay.textContent = `€ ${sumIncome().toFixed(2)}`
+    expenseBalanceDisplay.textContent = `€ ${sumExpense().toFixed(2)}`
+    savingsBalanceDisplay.textContent = `€ ${sumSavings().toFixed(2)}`
 
 }
 
@@ -115,7 +125,7 @@ const updateChartTotal = () => {
             labels: ['INC', 'EXP', 'SAV' ],
             datasets: [{
                 label: 'Income',
-                data: [800, -250, -60],
+                data: [sumIncome(), sumExpense(), sumSavings()],
                 backgroundColor: [
                     '#0bad39',
                     '#ff0000',
@@ -138,15 +148,15 @@ const updateChartTotal = () => {
 
 }
 
-const addTransaction = () => {
-    
+const addTransaction = (e) => {
+    e.preventDefault()    
 }
 
 submitTransaction.addEventListener('submit', addTransaction)
 
 const init = () => {
     Transactions.forEach(displayInDOM);
-    updateBalance(Transactions)
+    updateBalance()
     updateChartTotal()  
 }
 
