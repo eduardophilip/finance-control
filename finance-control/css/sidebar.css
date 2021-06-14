@@ -40,7 +40,7 @@
     transition: 500ms;
 }
 
-.sidebar__list--dropdown {
+.sidebar__list--submenu {
     display: none;
 }
 
