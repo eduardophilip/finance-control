@@ -1,7 +1,6 @@
 const sidebar = document.querySelector('.sidebar');
 const headerBtn = document.querySelector('.header__btn');
-const icon = document.querySelector('.sidebar-year__icon');
-const list = document.querySelector('.sidebar__list--submenu');
+
 
 const yearLink = document.querySelectorAll('.sidebar-year__link')
 
@@ -18,6 +17,9 @@ const toggleSidebar = () => {
 headerBtn.addEventListener('click', toggleSidebar)
 
 for(let item of yearLink) {
+    const parent = item.closest('.sidebar-year');
+    const icon = parent.querySelector('.sidebar-year__icon');
+    const list = parent.querySelector('.sidebar__list--submenu');
 
     item.onclick = () => {
         icon.classList.toggle('sidebar-year__icon--rotate');
