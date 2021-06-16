@@ -3,7 +3,8 @@ Chart.register(...registerables);
 // import { closeModal } from 'modal.js'
 
 const table = document.querySelector('.table__body');
-const submitTransaction = document.querySelector('.modal__submit-form')
+const submitTransaction = document.querySelector('.modal__submit-form');
+let doughnutChart;
 
 
 const Transactions = [ /*How to export this const */ 
@@ -102,7 +103,6 @@ const sumSavings = () => {
 }
 
 const totalBalance = () => {
-
     const transactionAmounts = Transactions.map(items => items.transaction.amount);
     return transactionAmounts.reduce((accu, currentValue) => accu + currentValue, 0);
 } 
@@ -113,17 +113,21 @@ const updateBalance = () => {
     const expenseBalanceDisplay = document.querySelector('.card__value--expense');
     const savingsBalanceDisplay = document.querySelector('.card__value--savings');
 
-    totalBalanceDisplay.textContent = `€ ${totalBalance().toFixed(2)}`
-    incomeBalanceDisplay.textContent = `€ ${sumIncome().toFixed(2)}`
-    expenseBalanceDisplay.textContent = `€ ${sumExpense().toFixed(2)}`
-    savingsBalanceDisplay.textContent = `€ ${sumSavings().toFixed(2)}`
+    totalBalanceDisplay.textContent = `€ ${totalBalance().toFixed(2)}`;
+    incomeBalanceDisplay.textContent = `€ ${sumIncome().toFixed(2)}`;
+    expenseBalanceDisplay.textContent = `€ ${sumExpense().toFixed(2)}`;
+    savingsBalanceDisplay.textContent = `€ ${sumSavings().toFixed(2)}`;
 
 }
 
-const updateChartTotal = () => {
+const updateChart = () => {
+    doughnutChart.data.datasets[0].data = [sumIncome(), sumExpense(), sumSavings()];
+    doughnutChart.update();
+}
+
+const createChart = () => {
     const chartTotal = document.querySelector('.chart-total');
-    
-    const doughnutChart = new Chart(chartTotal, {
+    doughnutChart = new Chart(chartTotal, {
         type: 'doughnut',
         data: {
             labels: ['INC', 'EXP', 'SAV' ],
@@ -149,17 +153,17 @@ const updateChartTotal = () => {
         }
     
     });
-
 }
 
 const init = () => {
-    table.innerHTML = ''
+    table.innerHTML = '';
     Transactions.forEach(displayInDOM);
-    updateBalance()
-    updateChartTotal()  
+    updateBalance();
+    updateChart();
 }
 
-init()
+createChart();
+init();
 
 const closeModalSubmit = (e) => {
     const modal = document.querySelector(".modal")
