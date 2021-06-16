@@ -1,6 +1,9 @@
 import { Chart, registerables } from 'chart.js';
 import { Transactions } from './data/mock-transactions';
 
+import IconDelete from '../img/btn-delete.svg';
+import IconEdit from '../img/edit.svg';
+
 Chart.register(...registerables);
 // import { closeModal } from 'modal.js'
 
@@ -19,8 +22,8 @@ const displayInDOM = (Transactions) => {
         <td>€ ${Transactions.transaction.amount.toFixed(2)}</td>
         <td>${Transactions.transaction.date}</td>
         <td class="table__body-icons">
-            <img src="/btn-delete.613f7c55.svg" alt="btn-delete">
-            <img src="/edit.ae19839e.svg" alt="btn-edit">
+            <img src="${IconDelete}" alt="btn-delete">
+            <img src="${IconEdit}" alt="btn-edit">
         </td>`
 
         
