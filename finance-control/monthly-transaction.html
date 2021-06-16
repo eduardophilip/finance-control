@@ -148,7 +148,7 @@
     <section class="folder-open">
       <img class="folder-open__icon" src="img/folder-open.svg" alt="icon-folder">
       <button class="folder-open__year t-h3">2021</button>
-      <button class="folder-open__month t-h3">/ May</button> for second page 
+      <button class="folder-open__month t-h3">/ May</button> 
     </section> 
 
     <section class="cards container">
@@ -238,9 +238,9 @@
   <div class="modal">
     <div class="modal__content">
       <div class="modal__form">
-        <h2 class="modal__header "><!-- dinamico --></h2>
+        <h2 class="modal__header "></h2>
 
-        <form class="submit-form" action="">
+        <form class="modal__submit-form" action="">
 
           <div class="modal__name">
             <label class="sr-only" for="description">Transaction name</label>
@@ -248,7 +248,8 @@
             class="modal__input" 
             type="text" 
             id="description"
-            placeholder="Transaction name">
+            placeholder="Transaction name"
+            required>
           </div>
           <div class="modal__amount">
             <label class="sr-only" for="amount">amount</label>
@@ -256,7 +257,9 @@
             class="modal__input" 
             type="number" 
             id="amount"
-            placeholder="0.00">
+            placeholder="0.00"
+            step="0.01"
+            required>
             <small class="modal__help">use dots to decimal places</small>
           </div>
           <div class="modal__date">
@@ -265,7 +268,7 @@
             class="modal__input" 
             type="date"
             id="date"
-            
+            required
             >
           </div>
           <div class="modal__button">
