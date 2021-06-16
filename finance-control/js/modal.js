@@ -8,15 +8,14 @@ const inputName = document.getElementById('description');
 const inputAmount = document.getElementById('amount');
 const inputDate = document.getElementById('date');
 
-const btnCancel = document.querySelector('.modal__button-cancel');
+const submitForm = document.querySelector('.modal__submit-form')
 
 const openModalIncome = () => {
     modalHeader.textContent = 'Add income';
     modalHeader.classList.add('modal__header--income');
 
-    inputName.classList.add('modal__input-name--income');
-    inputAmount.classList.add('modal__input-amount--income');
-    inputDate.classList.add('modal__input-date--income');
+    submitForm.classList.remove('modal__submit-form');
+    submitForm.classList.add('modal__submit-form--income');
 
     modal.classList.add('modal--active')
 
@@ -25,9 +24,8 @@ const openModalExpense = () => {
     modalHeader.textContent = 'Add Expense'
     modalHeader.classList.add('modal__header--expense');
 
-    inputName.classList.add('modal__input-name--expense');
-    inputAmount.classList.add('modal__input-amount--expense');
-    inputDate.classList.add('modal__input-date--expense');
+    submitForm.classList.remove('modal__submit-form');
+    submitForm.classList.add('modal__submit-form--expense');
 
     modal.classList.add('modal--active')
 }
@@ -35,30 +33,50 @@ const openModalSavings = () => {
     modalHeader.textContent = 'Add Savings'
     modalHeader.classList.add('modal__header--savings')
 
-    inputName.classList.add('modal__input-name--savings');
-    inputAmount.classList.add('modal__input-amount--savings');
-    inputDate.classList.add('modal__input-date--savings');
+    submitForm.classList.remove('modal__submit-form');
+    submitForm.classList.add('modal__submit-form--savings');
 
     modal.classList.add('modal--active')
 }
 
-const closeModal = (e) => {
+export const closeModal = (e) => {
     const classClicked = e.target.classList[0];
+
     const classNames = ['modal', 'modal__button-cancel']
     const classNameExists = classNames.some(className => className === classClicked);
 
-   if (classNameExists) {
-       console.log(classClicked)
-       modal.classList.remove('modal--active')
-   }
+ 
+    if (classNameExists) {
+
+        modal.classList.remove('modal--active');
+        modalHeader.textContent = '';
+    
+        modalHeader.classList.remove('modal__header--income');
+        modalHeader.classList.remove('modal__header--expense');
+        modalHeader.classList.remove('modal__header--savings');
+
+        submitForm.classList.add('modal__submit-form');
+        submitForm.classList.remove('modal__submit-form--income');
+        submitForm.classList.remove('modal__submit-form--expense');
+        submitForm.classList.remove('modal__submit-form--savings');
+
+        inputName.value = ''
+        inputAmount.value = ''
+        inputDate.value = ''
+    }
+
+    
 
 }
+
+
 
 incomeBtn.addEventListener("click", openModalIncome)
 expenseBtn.addEventListener("click", openModalExpense)
 savingsBtn.addEventListener("click", openModalSavings)
 
 modal.addEventListener('click', closeModal)
+
 
 
 

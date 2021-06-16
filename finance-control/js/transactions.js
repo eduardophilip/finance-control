@@ -1,10 +1,12 @@
 import { Chart, registerables } from 'chart.js';
 Chart.register(...registerables);
+// import { closeModal } from 'modal.js'
 
-const submitTransaction = document.querySelector('.submit-form')
+const table = document.querySelector('.table__body');
+const submitTransaction = document.querySelector('.modal__submit-form')
 
 
-export const Transactions = [ /*How to export this const */ 
+const Transactions = [ /*How to export this const */ 
     {
         type: 'income',
         transaction: {
@@ -48,7 +50,7 @@ export const Transactions = [ /*How to export this const */
 ];
 
 const displayInDOM = (Transactions) => {
-    const table = document.querySelector('.table__body');
+   
     const tr = document.createElement('tr');
     tr.classList.add('table__body-tr', `table__body--${Transactions.type}`)
     table.appendChild(tr);
@@ -61,6 +63,8 @@ const displayInDOM = (Transactions) => {
             <img src="/btn-delete.613f7c55.svg" alt="btn-delete">
             <img src="/edit.ae19839e.svg" alt="btn-edit">
         </td>`
+
+        
 }
 
 const sumIncome = () =>  {
@@ -148,16 +152,75 @@ const updateChartTotal = () => {
 
 }
 
-const addTransaction = (e) => {
-    e.preventDefault()    
-}
-
-submitTransaction.addEventListener('submit', addTransaction)
-
 const init = () => {
+    table.innerHTML = ''
     Transactions.forEach(displayInDOM);
     updateBalance()
     updateChartTotal()  
 }
 
 init()
+
+const closeModalSubmit = (e) => {
+    const modal = document.querySelector(".modal")
+    const modalHeader = document.querySelector(".modal__header");
+
+    modal.classList.remove('modal--active');
+        modalHeader.textContent = '';
+    
+        modalHeader.classList.remove('modal__header--income');
+        modalHeader.classList.remove('modal__header--expense');
+        modalHeader.classList.remove('modal__header--savings');
+
+        submitTransaction.classList.add('modal__submit-form');
+        submitTransaction.classList.remove('modal__submit-form--income');
+        submitTransaction.classList.remove('modal__submit-form--expense');
+        submitTransaction.classList.remove('modal__submit-form--savings');
+
+}
+
+const addTransaction = (e) => {
+    e.preventDefault() 
+    const classNameClicked = e.target.classList[0]
+    let typeTransaction = ''
+    console.log(classNameClicked)
+
+    const nameTransaction = document.getElementById('description');
+    const amount = document.getElementById('amount');
+    const date = document.getElementById('date');
+
+    /* const classNames = ['modal__input-name--income', 'modal__input-name--expense', 'modal__input-name--savings']; */
+
+    if ( classNameClicked === 'modal__submit-form--income') {
+        typeTransaction = 'income'
+    } else if (classNameClicked === 'modal__submit-form--expense') {
+        typeTransaction = 'expense'
+    } else {
+        typeTransaction = 'savings'
+    }
+
+    console.log(typeTransaction)
+
+    Transactions.push({
+        type: typeTransaction,
+        transaction: {
+            name: nameTransaction.value,
+            amount: Number(amount.value),
+            date: date.value
+        }
+    })
+
+    nameTransaction.value = ''
+    amount.value = ''
+    date.value = ''
+
+    console.log(Transactions)
+
+    closeModalSubmit()
+    init()
+
+}
+
+submitTransaction.addEventListener('submit', addTransaction)
+
+
