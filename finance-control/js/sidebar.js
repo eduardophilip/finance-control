@@ -23,8 +23,17 @@ const toogleList = () => {
         const list = parent.querySelector('.sidebar__list--submenu');
         
     
-        item.onclick = () => {
-            item.classList.toggle('link--active')
+        item.onclick = (e) => {
+
+            if (e.currentTarget.classList.contains('link--active')) {
+                e.currentTarget.classList.remove('link--active');
+                yearLink.forEach(link => link.classList.remove('link--active'))
+            } else {
+                yearLink.forEach(link => link.classList.remove('link--active'))
+                e.currentTarget.classList.add('link--active');
+            }
+            
+            // item.classList.toggle('link--active')
             icon.classList.toggle('sidebar-year__icon--rotate');
             list.classList.toggle('sidebar__list--submenu');
         }
@@ -33,9 +42,15 @@ const toogleList = () => {
 }
 
 const handleClickInMonth = (e) => {
-    e.preventDefault()
-    month.forEach(month => month.classList.remove('link--active'));
-    e.currentTarget.classList.add('link--active')
+
+    
+    if (e.currentTarget.classList.contains('link--active')) {
+        e.currentTarget.classList.remove('link--active')
+        month.forEach(month => month.classList.remove('link--active'));
+    } else {
+        month.forEach(month => month.classList.remove('link--active'));
+        e.currentTarget.classList.add('link--active')
+    }
 }
 
 month.forEach(node => node.addEventListener('click', handleClickInMonth))
