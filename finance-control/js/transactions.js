@@ -153,13 +153,14 @@ const addTransaction = (e) => {
     const amount = document.getElementById('amount');
     const date = document.getElementById('date');
 
-
     if ( classNameClicked === 'modal__submit-form--income') {
-        typeTransaction = 'income'
+        typeTransaction = 'income';
     } else if (classNameClicked === 'modal__submit-form--expense') {
         typeTransaction = 'expense'
+        amount.value *= -1
     } else {
         typeTransaction = 'savings'
+        amount.value *= -1
     }
 
     Transactions.push({
