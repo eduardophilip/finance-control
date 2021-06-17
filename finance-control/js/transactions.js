@@ -11,7 +11,7 @@ const table = document.querySelector('.table__body');
 const submitTransaction = document.querySelector('.modal__submit-form');
 let doughnutChart;
 
-const displayInDOM = (Transactions) => {
+const updateTable = (Transactions) => {
    
     const tr = document.createElement('tr');
     tr.classList.add('table__body-tr', `table__body--${Transactions.type}`)
@@ -94,7 +94,7 @@ const createChart = () => {
             labels: ['INC', 'EXP', 'SAV' ],
             datasets: [{
                 label: 'Income',
-                data: [sumIncome(), sumExpense(), sumSavings()],
+                data: [],
                 backgroundColor: [
                     '#0bad39',
                     '#ff0000',
@@ -118,7 +118,7 @@ const createChart = () => {
 
 const init = () => {
     table.innerHTML = '';
-    Transactions.forEach(displayInDOM);
+    Transactions.forEach(updateTable);
     updateBalance();
     updateChart();
 }
@@ -145,16 +145,14 @@ const closeModalSubmit = (e) => {
 }
 
 const addTransaction = (e) => {
-    e.preventDefault() 
-    const classNameClicked = e.target.classList[0]
-    let typeTransaction = ''
-    console.log(classNameClicked)
+    e.preventDefault() ;
+    const classNameClicked = e.target.classList[0];
+    let typeTransaction = '';
 
     const nameTransaction = document.getElementById('description');
     const amount = document.getElementById('amount');
     const date = document.getElementById('date');
 
-    /* const classNames = ['modal__input-name--income', 'modal__input-name--expense', 'modal__input-name--savings']; */
 
     if ( classNameClicked === 'modal__submit-form--income') {
         typeTransaction = 'income'
@@ -164,8 +162,6 @@ const addTransaction = (e) => {
         typeTransaction = 'savings'
     }
 
-    console.log(typeTransaction)
-
     Transactions.push({
         type: typeTransaction,
         transaction: {
@@ -173,19 +169,17 @@ const addTransaction = (e) => {
             amount: Number(amount.value),
             date: date.value
         }
-    })
+    });
 
-    nameTransaction.value = ''
-    amount.value = ''
-    date.value = ''
+    nameTransaction.value = '';
+    amount.value = '';
+    date.value = '';
 
-    console.log(Transactions)
-
-    closeModalSubmit()
-    init()
+    closeModalSubmit();
+    init();
 
 }
 
-submitTransaction.addEventListener('submit', addTransaction)
+submitTransaction.addEventListener('submit', addTransaction);
 
 
