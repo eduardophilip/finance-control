@@ -153,6 +153,9 @@ const addTransaction = (e) => {
     const amount = document.getElementById('amount');
     const date = document.getElementById('date');
 
+    const splittedDate = date.value.split("-");
+    const dateFormatted = `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
+
     if ( classNameClicked === 'modal__submit-form--income') {
         typeTransaction = 'income';
     } else if (classNameClicked === 'modal__submit-form--expense') {
@@ -169,13 +172,15 @@ const addTransaction = (e) => {
         transaction: {
             name: nameTransaction.value,
             amount: Number(amount.value),
-            date: date.value
+            date: dateFormatted
         }
     });
 
     nameTransaction.value = '';
     amount.value = '';
     date.value = '';
+
+    
 
     closeModalSubmit();
     init();
