@@ -161,6 +161,7 @@ const addTransaction = (e) => {
     } else {
         typeTransaction = 'savings'
         amount.value *= -1
+        nameTransaction.removeAttribute("disabled")
     }
 
     Transactions.push({

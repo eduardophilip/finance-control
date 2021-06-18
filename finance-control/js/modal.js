@@ -37,6 +37,9 @@ const openModalSavings = () => {
     submitForm.classList.add('modal__submit-form--savings');
 
     modal.classList.add('modal--active')
+
+    inputName.value = 'Savings'
+    inputName.setAttribute("disabled", "disabled")
 }
 
 export const closeModal = (e) => {
@@ -63,6 +66,8 @@ export const closeModal = (e) => {
         inputName.value = ''
         inputAmount.value = ''
         inputDate.value = ''
+
+        inputName.removeAttribute("disabled")
     }
 
     
