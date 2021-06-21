@@ -10,7 +10,12 @@ const table = document.querySelector('.table__body');
 const submitTransaction = document.querySelector('.modal__submit-form');
 let doughnutChart;
 
-const removeTransactions = index => Transactions.splice(index, 1);
+export const removeTransactions = index => {
+    console.log('removeTransactions', index);
+    console.log(Transactions);
+    Transactions.splice(index, 1);
+    init();
+};
 const editTransactions = index => () => {
 
 }
