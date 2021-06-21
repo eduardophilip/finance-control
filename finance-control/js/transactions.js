@@ -1,17 +1,19 @@
 import { Chart, registerables } from 'chart.js';
 import { Transactions } from './data/mock-transactions';
-
 import IconDelete from '../img/btn-delete.svg';
 import IconEdit from '../img/edit.svg';
+import { openModalIncome, openModalExpense, openModalSavings, closeModal, closeModalSubmit } from './modal'
 
 Chart.register(...registerables);
-// import { closeModal } from 'modal.js'
 
 const table = document.querySelector('.table__body');
 const submitTransaction = document.querySelector('.modal__submit-form');
 let doughnutChart;
 
 const removeTransactions = index => Transactions.splice(index, 1);
+const editTransactions = index => () => {
+
+}
 
 const updateTable = (Transactions, index) => {
    
@@ -25,7 +27,7 @@ const updateTable = (Transactions, index) => {
         <td>${Transactions.transaction.date}</td>
         <td class="table__body-icons">
             <img onclick="removeTransactions(${index})" src="${IconDelete}" alt="btn-delete">
-            <img src="${IconEdit}" alt="btn-edit">
+            <img onclick="editTransactions(${index})" src="${IconEdit}" alt="btn-edit">
         </td>`
 
         
@@ -128,23 +130,6 @@ const init = () => {
 createChart();
 init();
 
-const closeModalSubmit = (e) => {
-    const modal = document.querySelector(".modal")
-    const modalHeader = document.querySelector(".modal__header");
-
-    modal.classList.remove('modal--active');
-        modalHeader.textContent = '';
-    
-        modalHeader.classList.remove('modal__header--income');
-        modalHeader.classList.remove('modal__header--expense');
-        modalHeader.classList.remove('modal__header--savings');
-
-        submitTransaction.classList.add('modal__submit-form');
-        submitTransaction.classList.remove('modal__submit-form--income');
-        submitTransaction.classList.remove('modal__submit-form--expense');
-        submitTransaction.classList.remove('modal__submit-form--savings');
-
-}
 
 const addTransaction = (e) => {
     e.preventDefault() ;

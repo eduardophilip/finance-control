@@ -10,7 +10,7 @@ const inputDate = document.getElementById('date');
 
 const submitForm = document.querySelector('.modal__submit-form')
 
-const openModalIncome = () => {
+export const openModalIncome = () => {
     modalHeader.textContent = 'Add income';
     modalHeader.classList.add('modal__header--income');
 
@@ -20,7 +20,8 @@ const openModalIncome = () => {
     modal.classList.add('modal--active')
 
 }
-const openModalExpense = () => {
+
+export const openModalExpense = () => {
     modalHeader.textContent = 'Add Expense'
     modalHeader.classList.add('modal__header--expense');
 
@@ -29,7 +30,7 @@ const openModalExpense = () => {
 
     modal.classList.add('modal--active')
 }
-const openModalSavings = () => {
+export const openModalSavings = () => {
     modalHeader.textContent = 'Add Savings'
     modalHeader.classList.add('modal__header--savings')
 
@@ -71,6 +72,23 @@ export const closeModal = (e) => {
     }
 
     
+
+}
+
+
+export const closeModalSubmit = (e) => {
+
+    modal.classList.remove('modal--active');
+    modalHeader.textContent = '';
+    
+    modalHeader.classList.remove('modal__header--income');
+    modalHeader.classList.remove('modal__header--expense');
+    modalHeader.classList.remove('modal__header--savings');
+
+    submitTransaction.classList.add('modal__submit-form');
+    submitTransaction.classList.remove('modal__submit-form--income');
+    submitTransaction.classList.remove('modal__submit-form--expense');
+    submitTransaction.classList.remove('modal__submit-form--savings');
 
 }
 
