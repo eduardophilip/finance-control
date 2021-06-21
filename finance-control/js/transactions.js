@@ -11,7 +11,9 @@ const table = document.querySelector('.table__body');
 const submitTransaction = document.querySelector('.modal__submit-form');
 let doughnutChart;
 
-const updateTable = (Transactions) => {
+const removeTransactions = index => Transactions.splice(index, 1);
+
+const updateTable = (Transactions, index) => {
    
     const tr = document.createElement('tr');
     tr.classList.add('table__body-tr', `table__body--${Transactions.type}`)
@@ -22,7 +24,7 @@ const updateTable = (Transactions) => {
         <td>€ ${Transactions.transaction.amount.toFixed(2)}</td>
         <td>${Transactions.transaction.date}</td>
         <td class="table__body-icons">
-            <img src="${IconDelete}" alt="btn-delete">
+            <img onclick="removeTransactions(${index})" src="${IconDelete}" alt="btn-delete">
             <img src="${IconEdit}" alt="btn-edit">
         </td>`
 
@@ -180,11 +182,8 @@ const addTransaction = (e) => {
     amount.value = '';
     date.value = '';
 
-    
-
     closeModalSubmit();
     init();
-
 }
 
 submitTransaction.addEventListener('submit', addTransaction);
