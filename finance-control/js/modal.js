@@ -1,3 +1,4 @@
+import { submitTransaction } from "./transactions";
 const incomeBtn = document.querySelector(".card__btn-income");
 const expenseBtn = document.querySelector(".card__btn-expense");
 const savingsBtn = document.querySelector(".card__btn-savings");

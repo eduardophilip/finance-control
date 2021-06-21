@@ -7,17 +7,15 @@ import { openModalIncome, openModalExpense, openModalSavings, closeModal, closeM
 Chart.register(...registerables);
 
 const table = document.querySelector('.table__body');
-const submitTransaction = document.querySelector('.modal__submit-form');
+export const submitTransaction = document.querySelector('.modal__submit-form');
 let doughnutChart;
 
 export const removeTransactions = index => {
-    console.log('removeTransactions', index);
-    console.log(Transactions);
     Transactions.splice(index, 1);
     init();
 };
-const editTransactions = index => () => {
-
+export const editTransactions = index => () => {
+    openModalIncome()
 }
 
 const updateTable = (Transactions, index) => {
