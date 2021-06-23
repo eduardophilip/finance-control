@@ -14,7 +14,7 @@ export const removeTransactions = index => {
     Transactions.splice(index, 1);
     init();
 };
-export const editTransactions = index => () => {
+export const editTransactions = index =>  {
     openModalIncome()
 }
 
