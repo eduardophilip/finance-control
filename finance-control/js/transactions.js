@@ -6,19 +6,23 @@ import { openModalIncome, openModalExpense, openModalSavings, closeModal, closeM
 
 Chart.register(...registerables);
 
+const nameTransaction = document.getElementById('description');
+const amount = document.getElementById('amount');
+const date = document.getElementById('date');
+
+/* const splittedDate = date.value.split("-");
+const dateFormatted = `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}` */
+
 const table = document.querySelector('.table__body');
 const submitTransaction = document.querySelector('.modal__submit-form');
 let doughnutChart;
 
-export const removeTransactions = index => {
-    console.log('removeTransactions', index);
-    console.log(Transactions);
+const removeTransactions = index => {
     Transactions.splice(index, 1);
     init();
 };
-const editTransactions = index => () => {
+window.removeTransactions = removeTransactions;
 
-}
 
 const updateTable = (Transactions, index) => {
    
@@ -32,7 +36,7 @@ const updateTable = (Transactions, index) => {
         <td>${Transactions.transaction.date}</td>
         <td class="table__body-icons">
             <img onclick="removeTransactions(${index})" src="${IconDelete}" alt="btn-delete">
-            <img onclick="editTransactions(${index})" src="${IconEdit}" alt="btn-edit">
+            <img class="table__btn-edit table__btn-edit--${Transactions.type}" data-id="${index}" src="${IconEdit}" alt="btn-edit">
         </td>`
 
         
@@ -140,13 +144,7 @@ const addTransaction = (e) => {
     e.preventDefault() ;
     const classNameClicked = e.target.classList[0];
     let typeTransaction = '';
-
-    const nameTransaction = document.getElementById('description');
-    const amount = document.getElementById('amount');
-    const date = document.getElementById('date');
-
-    const splittedDate = date.value.split("-");
-    const dateFormatted = `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
+    const isToEditTransaction = submitTransaction.classList.contains('modal__submit-form--edit')
 
     if ( classNameClicked === 'modal__submit-form--income') {
         typeTransaction = 'income';
@@ -159,23 +157,64 @@ const addTransaction = (e) => {
         nameTransaction.removeAttribute("disabled")
     }
 
-    Transactions.push({
-        type: typeTransaction,
-        transaction: {
-            name: nameTransaction.value,
-            amount: Number(amount.value),
-            date: dateFormatted
-        }
-    });
-
-    nameTransaction.value = '';
-    amount.value = '';
-    date.value = '';
+    if (isToEditTransaction) {
+        editTransactions(indexTtransaction)
+    } else {
+        Transactions.push({
+            type: typeTransaction,
+            transaction: {
+                name: nameTransaction.value,
+                amount: Number(amount.value),
+                date: date.value
+            }
+        });
+    }
 
     closeModalSubmit();
     init();
 }
 
+const setValuesInput = index => {
+    nameTransaction.value = Transactions[index].transaction.name;
+    amount.value = Transactions[index].transaction.amount;
+    if (amount.value < 0) {
+        amount.value = Transactions[index].transaction.amount * -1
+    } else {
+        amount.value = Transactions[index].transaction.amount
+    }
+    date.value = Transactions[index].transaction.date
+}
+
+const editTransactions = index => {
+        Transactions[index].transaction.name = nameTransaction.value;
+        Transactions[index].transaction.amount = Number(amount.value);
+        Transactions[index].transaction.date = date.value;
+}
+
+const setEnvironmentToEdit  = (e) => {
+    const btnEdit = e.target.closest('.table__btn-edit');
+    let indexTtransaction = parseInt(btnEdit.dataset.id);
+    window.indexTtransaction = indexTtransaction
+
+    const isBtnEditIncome = btnEdit.classList.contains('table__btn-edit--income');
+    
+        if (isBtnEditIncome){
+            openModalIncome();
+            submitTransaction.classList.add('modal__submit-form--edit');
+            setValuesInput(indexTtransaction)
+        } else if (btnEdit.classList.contains('table__btn-edit--expense')) {
+            openModalExpense()
+            submitTransaction.classList.add('modal__submit-form--edit');
+            setValuesInput(indexTtransaction)
+        } else {
+            openModalSavings()
+            submitTransaction.classList.add('modal__submit-form--edit');
+            setValuesInput(indexTtransaction)
+        }
+    
+}
+
 submitTransaction.addEventListener('submit', addTransaction);
+table.addEventListener('click', setEnvironmentToEdit)
 
 

@@ -43,16 +43,8 @@ export const openModalSavings = () => {
     inputName.setAttribute("disabled", "disabled")
 }
 
-export const closeModal = (e) => {
-    const classClicked = e.target.classList[0];
-
-    const classNames = ['modal', 'modal__button-cancel']
-    const classNameExists = classNames.some(className => className === classClicked);
-
- 
-    if (classNameExists) {
-
-        modal.classList.remove('modal--active');
+const setCssClassValues = () => {
+         modal.classList.remove('modal--active');
         modalHeader.textContent = '';
     
         modalHeader.classList.remove('modal__header--income');
@@ -63,36 +55,29 @@ export const closeModal = (e) => {
         submitForm.classList.remove('modal__submit-form--income');
         submitForm.classList.remove('modal__submit-form--expense');
         submitForm.classList.remove('modal__submit-form--savings');
+        submitForm.classList.remove('modal__submit-form--edit')
 
         inputName.value = ''
         inputAmount.value = ''
         inputDate.value = ''
+}
 
-        inputName.removeAttribute("disabled")
+export const closeModal = (e) => {
+    const classClicked = e.target.classList[0];
+
+    const classNames = ['modal', 'modal__button-cancel']
+    const classNameExists = classNames.some(className => className === classClicked);
+
+ 
+    if (classNameExists) {
+        setCssClassValues()
+         inputName.removeAttribute("disabled")
     }
-
-    
-
 }
 
-
-export const closeModalSubmit = (e) => {
-
-    modal.classList.remove('modal--active');
-    modalHeader.textContent = '';
-    
-    modalHeader.classList.remove('modal__header--income');
-    modalHeader.classList.remove('modal__header--expense');
-    modalHeader.classList.remove('modal__header--savings');
-
-    submitTransaction.classList.add('modal__submit-form');
-    submitTransaction.classList.remove('modal__submit-form--income');
-    submitTransaction.classList.remove('modal__submit-form--expense');
-    submitTransaction.classList.remove('modal__submit-form--savings');
-
+export const closeModalSubmit = () => {
+    setCssClassValues()
 }
-
-
 
 incomeBtn.addEventListener("click", openModalIncome)
 expenseBtn.addEventListener("click", openModalExpense)
