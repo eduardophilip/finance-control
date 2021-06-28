@@ -2,7 +2,7 @@ import { Chart, registerables } from 'chart.js';
 import { Transactions } from './data/mock-transactions';
 import IconDelete from '../img/btn-delete.svg';
 import IconEdit from '../img/edit.svg';
-import { openModalIncome, openModalExpense, openModalSavings, closeModal, closeModalSubmit } from './modal'
+import { openModalIncome, openModalExpense, openModalSavings, closeModal, closeModalSubmit } from './modal';
 
 Chart.register(...registerables);
 
@@ -27,7 +27,7 @@ window.removeTransactions = removeTransactions;
 const updateTable = (Transactions, index) => {
    
     const tr = document.createElement('tr');
-    tr.classList.add('table__body-tr', `table__body--${Transactions.type}`)
+    tr.classList.add('table__body-tr', `table__body--${Transactions.type}`);
     table.appendChild(tr);
 
     tr.innerHTML = `
@@ -46,34 +46,34 @@ const sumIncome = () =>  {
     const income = []
     for (let transaction of Transactions) {
         if(transaction.type === 'income') {
-            income.push(transaction)
+            income.push(transaction);
         }
     }    
 
-    const totalIncome = income.map(items => items.transaction.amount)
+    const totalIncome = income.map(items => items.transaction.amount);
     return totalIncome.reduce((accu, value) => accu + value, 0);
 
 }
 
 const sumExpense = () => {
-    const expense = []
+    const expense = [];
     for (let transaction of Transactions) {
         if (transaction.type === 'expense') {
-            expense.push(transaction)
+            expense.push(transaction);
         }
     }
-    const totalexpense = expense.map(items => items.transaction.amount)
-    return totalexpense.reduce((accu, value) => accu + value, 0)
+    const totalexpense = expense.map(items => items.transaction.amount);
+    return totalexpense.reduce((accu, value) => accu + value, 0);
 }
 const sumSavings = () => {
-    const savings = []
+    const savings = [];
     for ( let transaction of Transactions) {
         if (transaction.type === 'savings') {
-            savings.push(transaction)
+            savings.push(transaction);
         }
     }
-    const totalSavings = savings.map(items => items.transaction.amount)
-    return totalSavings.reduce((accu, value) => accu + value, 0)
+    const totalSavings = savings.map(items => items.transaction.amount);
+    return totalSavings.reduce((accu, value) => accu + value, 0);
 }
 
 const totalBalance = () => {
@@ -144,21 +144,21 @@ const addTransaction = (e) => {
     e.preventDefault() ;
     const classNameClicked = e.target.classList[0];
     let typeTransaction = '';
-    const isToEditTransaction = submitTransaction.classList.contains('modal__submit-form--edit')
+    const isToEditTransaction = submitTransaction.classList.contains('modal__submit-form--edit');
 
     if ( classNameClicked === 'modal__submit-form--income') {
         typeTransaction = 'income';
     } else if (classNameClicked === 'modal__submit-form--expense') {
-        typeTransaction = 'expense'
-        amount.value *= -1
+        typeTransaction = 'expense';
+        amount.value *= -1;
     } else {
-        typeTransaction = 'savings'
-        amount.value *= -1
-        nameTransaction.removeAttribute("disabled")
+        typeTransaction = 'savings';
+        amount.value *= -1;
+        nameTransaction.removeAttribute("disabled");
     }
 
     if (isToEditTransaction) {
-        editTransactions(indexTtransaction)
+        editTransactions(indexTtransaction);
     } else {
         Transactions.push({
             type: typeTransaction,
@@ -178,11 +178,11 @@ const setValuesInput = index => {
     nameTransaction.value = Transactions[index].transaction.name;
     amount.value = Transactions[index].transaction.amount;
     if (amount.value < 0) {
-        amount.value = Transactions[index].transaction.amount * -1
+        amount.value = Transactions[index].transaction.amount * -1;
     } else {
-        amount.value = Transactions[index].transaction.amount
+        amount.value = Transactions[index].transaction.amount;
     }
-    date.value = Transactions[index].transaction.date
+    date.value = Transactions[index].transaction.date;
 }
 
 const editTransactions = index => {
@@ -194,7 +194,7 @@ const editTransactions = index => {
 const setEnvironmentToEdit  = (e) => {
     const btnEdit = e.target.closest('.table__btn-edit');
     let indexTtransaction = parseInt(btnEdit.dataset.id);
-    window.indexTtransaction = indexTtransaction
+    window.indexTtransaction = indexTtransaction;
 
     const isBtnEditIncome = btnEdit.classList.contains('table__btn-edit--income');
     
@@ -203,18 +203,18 @@ const setEnvironmentToEdit  = (e) => {
             submitTransaction.classList.add('modal__submit-form--edit');
             setValuesInput(indexTtransaction)
         } else if (btnEdit.classList.contains('table__btn-edit--expense')) {
-            openModalExpense()
+            openModalExpense();
             submitTransaction.classList.add('modal__submit-form--edit');
-            setValuesInput(indexTtransaction)
+            setValuesInput(indexTtransaction);
         } else {
-            openModalSavings()
+            openModalSavings();
             submitTransaction.classList.add('modal__submit-form--edit');
-            setValuesInput(indexTtransaction)
+            setValuesInput(indexTtransaction);
         }
     
 }
 
 submitTransaction.addEventListener('submit', addTransaction);
-table.addEventListener('click', setEnvironmentToEdit)
+table.addEventListener('click', setEnvironmentToEdit);
 
 

@@ -1,14 +1,14 @@
 const incomeBtn = document.querySelector(".card__btn-income");
 const expenseBtn = document.querySelector(".card__btn-expense");
 const savingsBtn = document.querySelector(".card__btn-savings");
-const modal = document.querySelector(".modal")
+const modal = document.querySelector(".modal");
 const modalHeader = document.querySelector(".modal__header");
 
 const inputName = document.getElementById('description');
 const inputAmount = document.getElementById('amount');
 const inputDate = document.getElementById('date');
 
-const submitForm = document.querySelector('.modal__submit-form')
+const submitForm = document.querySelector('.modal__submit-form');
 
 export const openModalIncome = () => {
     modalHeader.textContent = 'Add income';
@@ -17,30 +17,30 @@ export const openModalIncome = () => {
     submitForm.classList.remove('modal__submit-form');
     submitForm.classList.add('modal__submit-form--income');
 
-    modal.classList.add('modal--active')
+    modal.classList.add('modal--active');
 
 }
 
 export const openModalExpense = () => {
-    modalHeader.textContent = 'Add Expense'
+    modalHeader.textContent = 'Add Expense';
     modalHeader.classList.add('modal__header--expense');
 
     submitForm.classList.remove('modal__submit-form');
     submitForm.classList.add('modal__submit-form--expense');
 
-    modal.classList.add('modal--active')
+    modal.classList.add('modal--active');
 }
 export const openModalSavings = () => {
-    modalHeader.textContent = 'Add Savings'
-    modalHeader.classList.add('modal__header--savings')
+    modalHeader.textContent = 'Add Savings';
+    modalHeader.classList.add('modal__header--savings');
 
     submitForm.classList.remove('modal__submit-form');
     submitForm.classList.add('modal__submit-form--savings');
 
-    modal.classList.add('modal--active')
+    modal.classList.add('modal--active');
 
-    inputName.value = 'Savings'
-    inputName.setAttribute("disabled", "disabled")
+    inputName.value = 'Savings';
+    inputName.setAttribute("disabled", "disabled");
 }
 
 const setCssClassValues = () => {
@@ -55,35 +55,35 @@ const setCssClassValues = () => {
         submitForm.classList.remove('modal__submit-form--income');
         submitForm.classList.remove('modal__submit-form--expense');
         submitForm.classList.remove('modal__submit-form--savings');
-        submitForm.classList.remove('modal__submit-form--edit')
+        submitForm.classList.remove('modal__submit-form--edit');
 
-        inputName.value = ''
-        inputAmount.value = ''
-        inputDate.value = ''
+        inputName.value = '';
+        inputAmount.value = '';
+        inputDate.value = '';
 }
 
 export const closeModal = (e) => {
     const classClicked = e.target.classList[0];
 
-    const classNames = ['modal', 'modal__button-cancel']
+    const classNames = ['modal', 'modal__button-cancel'];
     const classNameExists = classNames.some(className => className === classClicked);
 
  
     if (classNameExists) {
-        setCssClassValues()
-         inputName.removeAttribute("disabled")
+        setCssClassValues();
+         inputName.removeAttribute("disabled");
     }
 }
 
 export const closeModalSubmit = () => {
-    setCssClassValues()
+    setCssClassValues();
 }
 
-incomeBtn.addEventListener("click", openModalIncome)
-expenseBtn.addEventListener("click", openModalExpense)
-savingsBtn.addEventListener("click", openModalSavings)
+incomeBtn.addEventListener("click", openModalIncome);
+expenseBtn.addEventListener("click", openModalExpense);
+savingsBtn.addEventListener("click", openModalSavings);
 
-modal.addEventListener('click', closeModal)
+modal.addEventListener('click', closeModal);
 
 
 
