@@ -197,18 +197,20 @@ const setEnvironmentToEdit  = (e) => {
     window.indexTtransaction = indexTtransaction;
 
     const isBtnEditIncome = btnEdit.classList.contains('table__btn-edit--income');
+    const isBtnEditExpense = btnEdit.classList.contains('table__btn-edit--expense');
+    const addClassEdit = submitTransaction.classList.add('modal__submit-form--edit');
     
         if (isBtnEditIncome){
             openModalIncome();
-            submitTransaction.classList.add('modal__submit-form--edit');
-            setValuesInput(indexTtransaction)
-        } else if (btnEdit.classList.contains('table__btn-edit--expense')) {
+            addClassEdit
+            setValuesInput(indexTtransaction);
+        } else if (isBtnEditExpense) {
             openModalExpense();
-            submitTransaction.classList.add('modal__submit-form--edit');
+            addClassEdit
             setValuesInput(indexTtransaction);
         } else {
             openModalSavings();
-            submitTransaction.classList.add('modal__submit-form--edit');
+            addClassEdit
             setValuesInput(indexTtransaction);
         }
     
